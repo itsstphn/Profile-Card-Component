@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: hsl(185, 75%, 39%);
+  background-size: contain;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+
+  [class^="bg-"] {
+    position: absolute;
+    height: 1000px;
+    width: 1000px;
+    background-size: cover;
+    background-image: url(./images/bg-pattern-top.svg);
+    background-repeat: no-repeat;
+  }
+
+  .bg-top {
+    top: 50%;
+    // margin-top: -50%;
+    left: 50%;
+    // margin-top: -50%;
+    transform: scaleX(-1);
+  }
+
+  .bg-bottom {
+    bottom: 50%;
+    right: 50%;
+  }
+
+  .card {
+    z-index: 2;
+    display: grid;
+    text-align: center;
+    justify-items: center;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    max-height: 400px;
+    box-shadow: -1px 27px 44px 7px rgba(0, 0, 0, 0.17);
+    .profile-cover {
+      overflow: hidden;
+    }
+
+    .profile-photo {
+      width: fit-content;
+      height: fit-content;
+      background-color: white;
+      margin-top: -16%;
+      padding: 5px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .profile-details {
+      width: fit-content;
+      height: fit-content;
+      padding: 0.7rem;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 4fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      color: hsl(227, 10%, 46%);
+      gap: 7px;
+      margin-bottom: 0.5rem;
+
+      h2.name {
+        color: hsl(229, 23%, 23%);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .age {
+        font-size: 1.1rem;
+      }
+
+      .address {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        font-size: 0.8rem;
+      }
+    }
+
+    .profile-stats {
+      display: flex;
+      justify-content: space-around;
+      border-top: solid 1px rgb(212, 212, 212);
+      width: 100%;
+      padding: 1.7rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        color: hsl(227, 10%, 46%);
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+
+        span.highlight {
+          font-size: bold;
+          font-weight: 700;
+          font-size: 1.1rem;
+          color: hsl(229, 23%, 23%);
+          padding: 0.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card {
+    width: 320px;
+  }
+}
